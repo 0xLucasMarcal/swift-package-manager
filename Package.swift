@@ -83,6 +83,13 @@ let swiftPMProduct = (
     ]
 )
 
+let spmBasicsProduct = (
+    name: "SPMBasics",
+    targets: [
+        "Basics",
+    ]
+)
+
 #if os(Windows)
 let includeDynamicLibrary: Bool = false
 let systemSQLitePkgConfig: String? = nil
@@ -97,7 +104,7 @@ if ProcessInfo.processInfo.environment["SWIFTCI_INSTALL_RPATH_OS"] == "android" 
 /** An array of products which have two versions listed: one dynamically linked, the other with the
  automatic linking type with `-auto` suffix appended to product's name.
  */
-let autoProducts = [swiftPMProduct, swiftPMDataModelProduct]
+let autoProducts = [swiftPMProduct, swiftPMDataModelProduct, spmBasicsProduct]
 
 let shoudUseSwiftBuildFramework = (ProcessInfo.processInfo.environment["SWIFTPM_SWBUILD_FRAMEWORK"] != nil)
 
